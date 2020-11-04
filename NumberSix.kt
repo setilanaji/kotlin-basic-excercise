@@ -7,27 +7,12 @@ fun main() {
     }
 }
 
-fun checkNumberStatus(num: Int): String {
-    var result: String = ""
+fun checkNumberStatus(num: Int): String = "${num}.${isEvenNumber(num)}${isMultipleOfSeven(num)}${isMultipleOfEight(num)}${isMultipleOfOneHundred(num)}"
 
-    result += "${num}."
-    result += if (isEvenNumber(num)) {
-        " Genap"
-    } else {
-        " Ganjil"
-    }
-    if (isMultipleOfSeven(num)) result += " kelipatan tujuh"
-    if (isMultipleOfEight(num)) result += " kelipatan delapan"
-    if (isMultipleOfOneHundred(num)) result += " kelipatan seratus"
+fun isEvenNumber(num: Int): String = if (num % 2 == 0) " Genap" else " Ganjil"
 
-    return result
-}
+fun isMultipleOfSeven(num: Int): String = if (num % 7 == 0) " Kelipatan tujuh" else ""
 
+fun isMultipleOfEight(num: Int): String = if (num % 8 == 0) " Kelipatan delapan" else ""
 
-fun isEvenNumber(num: Int): Boolean = num % 2 == 0
-
-fun isMultipleOfSeven(num: Int): Boolean = num % 7 == 0
-
-fun isMultipleOfEight(num: Int): Boolean = num % 8 == 0
-
-fun isMultipleOfOneHundred(num: Int): Boolean = num % 100 == 0
+fun isMultipleOfOneHundred(num: Int): String = if (num % 100 == 0) " Kelipatan Seratus" else ""
