@@ -1,7 +1,14 @@
+import java.lang.NumberFormatException
+
 fun main() {
     print("Masukan Umur: ")
-    val age = readLine()!!.toInt()
-    print(checkRating(age))
+    try {
+        val age = readLine()!!.toInt()
+        print(checkRating(age))
+    }catch (e: NumberFormatException){
+        print("masukan anda tidak bisa dibaca")
+    }
+
 }
 
 fun checkRating(age: Int): String{
