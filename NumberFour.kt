@@ -3,4 +3,4 @@ fun main() {
     uniteList(list)
 }
 
-fun uniteList(list: List<String>) = list.forEach{ print("$it ") }
+fun uniteList(list: List<String>) = list.distinct().forEach{ print("$it ") }
