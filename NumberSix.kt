@@ -1,6 +1,6 @@
 fun main() {
 
-    val list = listOf(1..100).flatten()
+    val list = listOf(1..1000).flatten()
 
     for (num in list){
         println(checkNumberStatus(num))
