@@ -16,17 +16,19 @@ fun main() {
 
 fun checkNumber(num: Int): String{
 
-     if (isEven(num)){
-         if (isMultipleOfFive(num)){
-             return "Imperio Aberto"
-         }
-         return "Imperio"
-     } else {
-        if (isMultipleOfFour(num)){
-            return "Crucio Reducto"
+    var result = ""
+    if (isEven(num)){
+        result = "Imperio"
+        if (isMultipleOfFive(num)){
+            result = "Imperio Aberto"
         }
-         return "Crucio"
-     }
+    } else {
+        result = "Crucio"
+        if (isMultipleOfFour(num)){
+            result = "Crucio Reducto"
+        }
+    }
+    return result
 }
 
 fun isEven(num: Int): Boolean = num % 2 == 0
