@@ -1,5 +1,4 @@
 fun main() {
-
     try {
         print("Masukan tahun mulai: ")
         val start = readLine()!!.toInt()
@@ -10,19 +9,12 @@ fun main() {
     }catch (e: Exception){
         print("TIdak dapat membaca masukan anda")
     }
-
-
 }
 
 fun printLeapYears(start: Int, end: Int){
-
     for (year in start..end){
-        if (!isLeapYear(year)){
-            println("$year bukan tahun kabisat")
-        } else{
-            println("$year adalah tahun kabisat")
-        }
+        println(isLeapYear(year))
     }
 }
 
-fun isLeapYear(year: Int): Boolean = year % 4 == 0
+fun isLeapYear(year: Int): String = if (year % 4 == 0) "$year adalah tahun kabisat" else "$year bukan tahun kabisat"
